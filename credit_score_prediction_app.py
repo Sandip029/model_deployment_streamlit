@@ -9,9 +9,6 @@ Original file is located at
 
 import subprocess
 import sys
-
-!pip install gdown
-
 import gdown
 import streamlit as st
 import joblib
