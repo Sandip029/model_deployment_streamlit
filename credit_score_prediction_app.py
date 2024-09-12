@@ -10,11 +10,7 @@ Original file is located at
 import subprocess
 import sys
 
-#Install gdown
-subprocess.check_call([sys.executable, "-m", "pip", "install", "gdown", "-q"])
-
-# Install streamlit
-subprocess.check_call([sys.executable, "-m", "pip", "install", "streamlit", "-q"])
+!pip install gdown
 
 import gdown
 import streamlit as st
