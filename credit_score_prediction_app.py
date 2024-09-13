@@ -62,17 +62,10 @@ class CustomEncoder(BaseEstimator, TransformerMixin):
 
         return X
 
-gauth = GoogleAuth()
-gauth.LocalWebserverAuth()  # Creates local webserver and auto handles authentication.
-drive = GoogleDrive(gauth)
-
-# File ID and download location
-file_id = '1SHSBrl9T7qDoiQThluyfBJyPBg49iz0D'
+# Download and load the dataset
+url = 'https://drive.google.com/uc?id=1SHSBrl9T7qDoiQThluyfBJyPBg49iz0D'
 output = 'dataset.csv'
-
-# Download file from Google Drive
-downloaded_file = drive.CreateFile({'id': file_id})
-downloaded_file.GetContentFile(output)
+gdown.download(url, output, quiet=False)
 data = pd.read_csv(output)
 
 label_encoder = LabelEncoder()
