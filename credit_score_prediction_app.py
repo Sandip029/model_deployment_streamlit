@@ -9,8 +9,6 @@ Original file is located at
 
 import subprocess
 import sys
-from pydrive.auth import GoogleAuth
-from pydrive.drive import GoogleDrive
 import gdown
 import streamlit as st
 import joblib
