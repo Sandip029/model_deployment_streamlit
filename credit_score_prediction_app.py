@@ -9,6 +9,8 @@ Original file is located at
 
 import subprocess
 import sys
+from pydrive.auth import GoogleAuth
+from pydrive.drive import GoogleDrive
 import gdown
 import streamlit as st
 import joblib
@@ -60,9 +62,17 @@ class CustomEncoder(BaseEstimator, TransformerMixin):
 
         return X
 
-# Download and load the dataset
-!wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1SHSBrl9T7qDoiQThluyfBJyPBg49iz0D' -O dataset.csv
+gauth = GoogleAuth()
+gauth.LocalWebserverAuth()  # Creates local webserver and auto handles authentication.
+drive = GoogleDrive(gauth)
+
+# File ID and download location
+file_id = '1SHSBrl9T7qDoiQThluyfBJyPBg49iz0D'
 output = 'dataset.csv'
+
+# Download file from Google Drive
+downloaded_file = drive.CreateFile({'id': file_id})
+downloaded_file.GetContentFile(output)
 data = pd.read_csv(output)
 
 label_encoder = LabelEncoder()
