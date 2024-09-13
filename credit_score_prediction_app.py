@@ -74,7 +74,7 @@ label_encoder.fit(data['Credit_Score'])
 custom_encoder = CustomEncoder()
 data_transformed = custom_encoder.fit_transform(data)
 
-url = 'https://drive.google.com/uc?id=1PsAdcOZx-FateAgSuXcDdIYRnvjTlX8b'
+url = 'https://drive.google.com/uc?id=1Y15DOpl6a1GNZw7A5DHcWczWfFqI5UeX'
 output = 'best_pipeline_credit.sav'
 response = requests.get(url)
 with open(output, 'wb') as f:
