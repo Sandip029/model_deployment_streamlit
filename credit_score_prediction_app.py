@@ -61,9 +61,8 @@ class CustomEncoder(BaseEstimator, TransformerMixin):
         return X
 
 # Download and load the dataset
-url = 'https://docs.google.com/uc?export=download&id=1SHSBrl9T7qDoiQThluyfBJyPBg49iz0D'
+!wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1SHSBrl9T7qDoiQThluyfBJyPBg49iz0D' -O dataset.csv
 output = 'dataset.csv'
-subprocess.run(["wget", "--no-check-certificate", url, "-O", output])
 data = pd.read_csv(output)
 
 label_encoder = LabelEncoder()
