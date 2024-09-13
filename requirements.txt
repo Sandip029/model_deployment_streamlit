@@ -8,3 +8,4 @@ psutil
 pyyaml
 cloudpickle
 gdown
+wget
