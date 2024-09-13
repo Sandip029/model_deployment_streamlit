@@ -8,4 +8,4 @@ psutil
 pyyaml
 cloudpickle
 gdown
-wget
+PyDrive
