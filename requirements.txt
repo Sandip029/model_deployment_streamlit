@@ -8,4 +8,3 @@ psutil
 pyyaml
 cloudpickle
 gdown
-PyDrive
